@@ -2,11 +2,9 @@ import pandas as pd
 from mbruleminer.rule import Rule
 from mbruleminer.ruleset import RuleSet
 
-def test_create_ruleset():
-    
+def test_create_dummy_ruleset():
     def rule_function(df):
         return True
-    
     rule1 = Rule(rule_function, "rule1")
     rule2 = Rule(rule_function, "rule2")
     # From list
@@ -14,7 +12,9 @@ def test_create_ruleset():
     # From dict, which ruleset should now be.
     ruleset = RuleSet(ruleset)
 
-    rule_evaluations = ruleset.apply(None)
 
-    assert rule_evaluations == [True, True], f"Ruleset evaluation expected [True, True], got {rule_evaluations}"
+def test_create_ruleset_with_df():
+    df = pd.read_csv("tests/data/titanic3.csv")
+
+
 

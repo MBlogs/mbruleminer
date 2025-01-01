@@ -22,7 +22,7 @@ class RuleSet(OrderedDict):
         super().__init__(rules, *args, **kwargs)
 
 
-    def apply(self, df):
+    def apply_to_df(self, df):
         """
         Applies all rules in this RuleSet to a dataframe
         :param df: A pandas dataframe to apply rules to
@@ -30,5 +30,6 @@ class RuleSet(OrderedDict):
         :return: Returns a list of boolean results from applying each rule in the RuleSet
         :rtype: boolean
         """
-        results = [rule.apply(df) for rule in self.values()]
+        # TODO: Make sure this is row-wise
+        results = [rule.apply_to_df(df) for rule in self.values()]
         return results
