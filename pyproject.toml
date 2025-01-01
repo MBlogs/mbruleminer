@@ -5,7 +5,7 @@ description = "Automatically identify binary rules against a target within a dat
 authors = [
     {name = "Michael Brooks", email = "mjbrooks95@gmail.com"},
 ]
-dependencies = []
+dependencies = ["pandas>=2.2.3"]
 requires-python = ">=3.13"
 readme = "README.md"
 license = {text = "MIT"}
@@ -22,4 +22,6 @@ distribution = true
 test = [
     "pytest>=8.3.4",
     "mkdocs>=1.6.1",
+    "ipykernel>=6.29.5",
+    "pip>=24.3.1",
 ]
